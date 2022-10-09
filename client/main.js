@@ -23,9 +23,25 @@ const getInspiration = () => {
         alert(data);
     });
 }
-
-  
+const fruitBtn = document.getElementById("fruitButton")
+const getFruit = () => {
+    axios.get("http://localhost:4001/api/fruit/")
+    .then(res => {
+        const data = res.data;
+        alert(data);
+    })
+}
+const workoutBtn = document.getElementById("workoutButton")
+const getWorkout = () => {
+    axios.get("http://localhost:4001/api/workout/")
+    .then(res => {
+        const data = res.data;
+        alert(data);
+        })
+}
   
 complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', getFortune)
 inspirationBtn.addEventListener('mouseover', getInspiration)
+fruitBtn.addEventListener('mouseover', getFruit)
+workoutBtn.addEventListener('mouseenter', getWorkout)
